@@ -1,0 +1,41 @@
+*{margin:0px; padding:0px;}
+.container{overflow: hidden; }
+.logo{width:100%; background: url('./img/logo_bj.png') no-repeat; background-size:100% 100%; position:relative;}
+.navTag{overflow: hidden;}
+.navTag .logoImg{display:block; margin:17px 0 0 20px; width:73px; height:28px; float:left;}
+.navIcon{ display: block; position: fixed; z-index: 88; right:10px; top:20px; z-index:8; width:15px; height: 13px; }
+.bigLogo{width:185px; height:185px; display: block; position: absolute; left:50%; top:50%; margin:-87px 0 0 -92px; }
+.remarkIndex{text-align: center; font-size:12px; color:#fff; position: absolute; bottom:60px; left:0px; right:0px;}
+.remarkIndex p{padding-top:14px;}
+ 
+.navList{position:fixed; top:0px; width:100%; display: none; z-index: 10; background: #000; opacity: 0.9; filter:alpha(opacity:90);}
+.navList .closedBox{overflow: hidden; padding-top:21px; padding-right:15px; }
+.navList .closedBox img{display: block; float: right; width:14px; height: 14px}
+.navList ul{display: block; padding:0 35px;}
+.navList ul li {list-style: none; text-align: center;  border-bottom:1px solid #666e74; padding:15px 0 17px;}
+.navList ul li a{color:#fff; text-decoration: none; font-size:13px;}
+.slide {overflow:hidden; }
+.list{background:#0f88e5; margin-bottom:20px;}
+.list .item {position:relative;}
+.list .item img{display: block; width:100%;}
+.list .item .content{height:90px; padding-top:30px;overflow: hidden; position:absolute; bottom:0; left:0px; right:0px; background:#0f88e5}
+.list .item .content p{text-align:center; color:#fff; font-size:15px;}
+/*.list .item .content a{background: #1a77bf; text-decoration: none; width:48px; border:1px solid #828282; outline: none; padding:3px 15px; display: block; font-size:12px; margin:10px auto 0; color:#fff;}*/
+.list .item .content a{border:1px solid #fff;text-decoration: none; width:68px; outline: none; padding:3px 15px; display: block; font-size:12px; text-align:center; margin:10px auto 0; color:#fff;}
+
+
+.contact{background:#0f88e5; color:#fff; padding:34px 18px 27px;}
+.contact h1{font-size:14px; font-weight: normal; margin-bottom:16px;}
+.contact .item{font-size:12px; margin-bottom:11px; overflow: hidden;}  
+.contact .item .title{display:block; float:left;font-size:12px;}
+.contact .item .content{  margin-left:60px}
+
+
+.ewm{margin-top:26px; }
+
+.ewm img{display:block;width:172px; height: 158px;}
+.ewm p{font-size:12px; margin-top:15px;}
+
+.footer{background: #1c1e28; padding:37px 0 43px 18px}
+.footer img{width:75px; height:30px; margin-bottom:15px;}
+.footer p{color:#fff; font-size:12px; margin-bottom:9px;}
