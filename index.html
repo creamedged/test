@@ -2,178 +2,122 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 	<meta name="keywords" content="浦尔家,家庭服务,全屋清洁,卫浴清洁,厨房清洁"/>
 	<meta name="description" content="浦尔家,家庭服务,全屋清洁,卫浴清洁,厨房清洁"/>
 	<link rel="bookmark"  type="image/x-icon"  href="./img/favicon.ico"/>
     <link rel="shortcut icon" href="./img/favicon.ico">
-    <meta name="renderer"  content="webkit">
 	<title>浦尔家官网</title>
 	<script>
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			window.location = "./m/index.html"; //可以换成http地址
+		if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+			window.location = "../../index.html"; //可以换成http地址
 		}
 	</script>
 	<link rel="stylesheet" href="./index.css?v=20180530">
 </head>
 <body>
 	<div class="container">
-		<div class="header" id="header">
-			<img src="./img/logo.png" alt="" class="logo">
-            <ul class="menu">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">关于浦尔家</a></li>
-                <li><a href="case.html">服务案例</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-			<div class="rightIcon">
-				<img class="nav" note="list" src="./img/nav.png" alt="" id="nav">
-                <div class="navList" id="navList">
-                    <div class="ewm" id="ewmBox" note="ewmBox">
-                        <img src="./img/ewm.jpg" alt="浦尔家">
-                        <p>扫描二维码进入小程序</p>
+		<div class="list" id="list">
+            <div class="slide">
+                <div class="logo" id="logo">
+                    <img class="bigLogo" src="./img/big_logo.png" alt="">
+                    <div class="remarkIndex">
+                        <p>美好生活 浦至尔家</p>
+                        <p>浦尔家，家庭美好生活服务专家</p>
                     </div>
-                    <ul id="listBox" note="listBox">
-                        <li class="active">
-                            <a href="javascript:;">
-                                <span></span>
-                                <h1>首页</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=0">
-                                <span></span>
-                                <h1>3星全屋清洁</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=1">
-                                <span></span>
-                                <h1>5星精细擦窗</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=2">
-                                <span></span>
-                                <h1>5星卫浴清洁</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=3">
-                                <span></span>
-                                <h1>健康除螨</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=4">
-                                <span></span>
-                                <h1>5星厨房清洗</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=6">
-                                <span></span>
-                                <h1>收纳顾问</h1>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./detail.html?index=7">
-                                <span></span>
-                                <h1>家庭除醛</h1>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-				<!-- <img src="./img/weixin.png" note="ewm" alt="" id="ewm"> -->
-			</div>
-		</div>>
-		<!-- <div class="lineFore"></div> -->
-		<div class="content" id="content">
-			<div class="leftBox" id="leftBox">
-				<div class="topBox">
-					<div class="topLeftBox animate" id="topLeftBox">
-						<div class="positionBox">
-							<a href="./detail.html?index=0">
-								<div class="remark">
-									<img src="./img/logoRemark.png" alt="三星全屋清洁">
-									3星全屋清洁
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="topRightBox" id="topRightBox">
-						<div class="topRightTop animate">
-							<div class="positionBox">
-								<a href="./detail.html?index=6">
-									<div class="remark remarkSmall">
-										<div class="remark_content">
-											<img src="./img/logoRemark.png" alt="家庭除醛">
-											家庭除醛
-										</div>
-										
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="topRightbottom animate">
-							<div class="animate3d">
-								<div class="cus">
-                                    <div class="remark remarkSmall">
-                                        <img src="./img/logoRemark.png" alt="家庭美好生活服务专家">
-                                        家庭美好生活服务专家
-                                    </div>
-                                </div>
-                                <div class="cus2">
-                                    <div class="remark remarkSmall">
-                                        <img src="./img/logoRemark.png" alt="3星全屋清洁">
-                                        3星全屋清洁
-                                    </div>
-                                </div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="bottomBox">
-					<div class="item item1 animate" id="item1">
-						<div class="positionBox">
-							<a href="./detail.html?index=4">
-								<div class="remark remarkSmall">
-									<img src="./img/logoRemark.png" alt="5星厨房清洗">
-									5星厨房清洗
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item item2 animate" id="item2">
-						<div class="positionBox">
-							<a  href="./detail.html?index=2">
-								<div class="remark remarkSmall">
-									<img src="./img/logoRemark.png" alt="卫浴洁护">
-									卫浴洁护
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item item3 animate" id="item3">
-						<div class="positionBox">
-							<a href="./detail.html?index=5">
-								<div class="remark remarkSmall">
-									<img src="./img/logoRemark.png" alt="收纳顾问">
-									收纳顾问
-								</div>
-							</a>
-						</div>
-					</div>
+            </div>
+			<div class="slide item" id="item1">
+				<img src="./img/img1.jpg" alt="">
+				<div class="content">
+					<p>极致体验 一步到位</p>
+					<a href="javascript:;" id="btn1">3星全屋清洁</a>
 				</div>
 			</div>
-			<div class="rightBox" id="rightBox">
-				<!-- <div class="rightlogo"><img src="./img/topLogo.png" alt=""></div> -->
-				<div class="rightContent"></div>
+			<div class="slide item" id="item2">
+				<img src="./img/img2.jpg" alt="">
+				<div class="content">
+					<p>专业工具 细致入微</p>
+					<a href="javascript:;" id="btn2">5星精细擦窗</a>
+				</div>
 			</div>
+			<div class="slide item" id="item3">
+				<img src="./img/img3.jpg" alt="">
+				<div class="content">
+					<p>无菌空间 洁净卫浴</p>
+					<a href="javascript:;" id="btn3">5星卫浴清洁</a>
+				</div>
+			</div>
+			<div class="slide item" id="item4">
+				<img src="./img/img4.jpg" alt="">
+				<div class="content">
+					<p>灭菌除螨 刻不容缓</p>
+					<a href="javascript:;" id="btn4">健康除螨</a>
+				</div>
+			</div>
+			<div class="slide item" id="item5">
+				<img src="./img/img5.jpg" alt="">
+				<div class="content">
+					<p>清除油污 焕然一新</p>
+					<a href="javascript:;" id="btn5">5星厨房清洗</a>
+				</div>
+			</div>
+			<div class="slide item" id="item6">
+				<img src="./img/img6.jpg" alt="">
+				<div class="content">
+					<p>收纳生活 精致人生</p>
+					<a href="javascript:;" id="btn6">收纳顾问</a>
+				</div>
+			</div>
+			<div class="slide item" id="item7">
+				<img src="./img/img7.jpg" alt="">
+				<div class="content">
+					<p>洁护空气，健康全家</p>
+					<a href="javascript:;" id="btn7">家庭除醛</a>
+				</div>
+			</div>
+            <div class="slide last">
+                <div class="contact" id="contact">
+                    <h1>联系我们</h1>
+                    <div class="item"><h2 class="title">联系热线：</h2><p> (+86)010-88333313</p></div>
+                    <div class="item"><h2 class="title">公司邮箱：</h2><p> hr@aobei.com</p></div>
+                    <div class="item"><h2 class="title">公司传真：</h2><p> (+86)010-87925910</p></div>
+                    <div class="item"><h2 class="title">邮政编码：</h2><p> 100176</p></div>
+                    <div class="item"><h2 class="title">公司地址：</h2><p> 北京市亦庄经济技术开发区锋创科技园18号院5号楼15层</p></div>
+                    <div class="ewm">
+                        <img src="./img/ewmIcon.png" alt="">
+                        <p>扫描识别二维码，进入浦尔家小程序</p>
+                    </div>
+                    <div class="footer">
+                        <img src="./img/logo.png" alt="">
+                        <p>Copyright © 2018 PUERJIA.COM All Rights Reserved</p>
+                        <p>鳌背（北京）科技有限公司 京ICP备18003578号-2 </p>
+                    </div>
+                </div>
+            </div>
 		</div>
-		<div class="footer" id="footer">
-			All rights reserved by puerjia.com ©️2018 京ICP备18003578号-2
-		</div>
+        <div class="pop" id="pop">
+            <div class="closedBox"><img id="closed" src="./img/closed.png" alt=""></div>
+            <div class="contact">
+                <h1>联系我们</h1>
+                <div class="item"><h2 class="title">联系热线：</h2><p> (+86)010-88333313</p></div>
+                <div class="item"><h2 class="title">公司邮箱：</h2><p> hr@aobei.com</p></div>
+                <div class="item"><h2 class="title">公司传真：</h2><p> (+86)010-87925910</p></div>
+                <div class="item"><h2 class="title">邮政编码：</h2><p> 100176</p></div>
+                <div class="item"><h2 class="title">公司地址：</h2><p> 北京市亦庄经济技术开发区锋创科技园18号院5号楼15层</p></div>
+                <div class="ewm">
+                    <img src="./img/ewmIcon.png" alt="">
+                    <p>扫描识别二维码，进入浦尔家小程序</p>
+                </div>
+                <div class="footer">
+                    <img src="./img/logo.png" alt="">
+                    <p>Copyright © 2018 PUERJIA.COM All Rights Reserved</p>
+                    <p>鳌背（北京）科技有限公司 京ICP备18003578号-2 </p>
+                </div>
+            </div>
+        </div>
 	</div>
+    <script src="./slide.js?v=20180530"></script>
 	<script src="./index.js?v=20180530"></script>
 </body>
 </html>
