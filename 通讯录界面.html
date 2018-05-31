@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+<title>人名反应</title>
+</head>
+<link rel="stylesheet" href="css/namerea.css">
+<!-- <link rel="stylesheet/less" href="css/styles.less" /> -->
+<!-- <script src="js/less.min.js"></script> -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "microsoft yahei !important";
+}  
+li {
+  list-style: none;
+}  
+#bigbox {
+  margin-top: 0.525rem;
+}  
+.search {
+  width: 100%;
+  display: block;
+  height: 1.425rem;
+  padding-left:20px;
+  box-sizing: border-box;
+  background: #f7f7f7;
+  border-radius: 5px;
+  border: 0;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRTEyQ0Y5NTY0OTUxMUU4QkUzMUYwMjc3RTNEQzgwRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRTEyQ0Y5NjY0OTUxMUU4QkUzMUYwMjc3RTNEQzgwRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZFMTJDRjkzNjQ5NTExRThCRTMxRjAyNzdFM0RDODBFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZFMTJDRjk0NjQ5NTExRThCRTMxRjAyNzdFM0RDODBFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YEe5ZAAAAiNJREFUeNpi/P//PwMyWLNmjfm8efPSb968qQHis7Cw/DExMTmZlJQ029nZ+RYDFsAIM+TevXtMJSUlUy5evGgA5FpiUXvcxcVl98yZM+uxGnL37l2W9PT0Bffv348Gil00NTU9HhgYuFxGRuYh0EVaQNfFgmig3DcnJ6e9s2fPrkUxBWRIdXV1ppKS0n9NTc1Tq1evtgKJoePe3t5ooJoLQHxs+vTpPshyDNevX+ewtLRcD1IAlAzAZgAMFxcXV4As8/f3n4FiyPLly61BEsBAW4vPABA+e/asiK6u7n81NbVDp0+fFoWJMz169EgB5C1paemHDAQAHx/fBwEBAYY/f/7YAsNPBSbOBGN8//6dm4EEAIp6uCGqqqrguH/y5In8jRs3OPFpfPbsmezLly9BBhyWlZV9ADcEGCOXxcXFNwAl3YExE4/PkGXLlqUAvcIATAIngQnwNUoUA6MvDBR1wAA709nZGY8nZi4A1fxft26dKbIcPMVGRUX1njx5EpRSuURFRV+5ubltFhISevP48WPF/fv3u3/8+JEfKKcPUhsWFpbf3t4+CSPZg0Bubm7Vtm3bfLAle1A48PDwfP7w4YMg1KAVcIPQnX3q1ClxoGEVhoaG20FeNDc331hVVZUNTPZsUG8VgcRBuKKiIg/FO6QAYEYtWr9+fQiIHR4evpSJgQzQ09PTB8yga0DsO3fuqDEQSur4MKjsuXLlCi9AgAEABiaZFqSn9wMAAAAASUVORK5CYII=) no-repeat 0px center;
+}  
+#searchbox {
+  position: relative;
+  width: 17.55rem;
+  font-size: 0.65rem;
+  margin: 0 auto;
+  height: 1.425rem;
+  margin-bottom: 0.6rem;
+}  
+#searchbox img {
+  position: absolute;
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  top: 50%;
+  margin-top: -0.4375rem;
+  margin-left: 0.625rem;
+}  
+#searchbox span {
+  color: #bbbbbb;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.4375rem;
+  margin-left: 1.75rem;
+}  
+.namelist {
+  display: block;
+  height: 1.125rem;
+  line-height: 1.125rem;
+  background: #f5f5f5;
+  color: #999999;
+  font-size: 0.6rem;
+  border-top: 1px solid #e6e6e6;
+}  
+.namelist span {
+  display: block;
+  width: 17.55rem;
+  margin: 0 auto;
+}  
+.listbox {
+  display: block;
+  width: 100%;
+}  
+.listbox li {
+  width: 17.55rem;
+  font-size: 0.65rem;
+  height: 2.2rem;
+  margin: 0 auto;
+  line-height: 2.2rem;
+  font-size: 0.7rem;
+  color: black;
+  border-bottom: 1px solid #e6e6e6;
+}  
+li:last-child {
+  border: none ;
+}  
+.right_nav {
+  position: fixed;
+  right: 0.6rem;
+  top: 25%;
+}  
+.right_nav li {
+  font-size: 0.5rem;
+  text-align: center;
+}  
+.right_nav img {
+  width: 0.65rem;
+}  
+.active_fixed {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+}  
+.active_top {
+  margin-top: 1.2rem;
+}  
+.active_hide {
+  display: none;
+}  
+.overbox {
+  width: 100%;
+}  
+.overbox .overlistbox {
+  display: block;
+  width: 18.15rem;
+  margin-left: 0.6rem;
+}  
+.overbox .overlistbox li {
+  font-size: 0.7rem;
+  border-bottom: 1px solid #e6e6e6;
+  height: 2.25rem;
+  line-height: 2.25rem;
+}  
+input {
+  outline: none;
+  /*清除选中效果的默认蓝色边框 */
+
+  -webkit-appearance: none;
+  /*清除浏览器默认的样式 */
+
+  line-height: normal;
+}  
+</style>
+<body style="position: relative;">
+<div id="bigbox">
+    <div id="searchbox">
+        <form action="#" ><input class="search"  type="search" placeholder="搜索" /></form>
+    </div>
+</div>
+<!--列表区域-->
+<div id="list_big_box" style="">
+    <div class="elist publictop"  style="display: none">
+        <div class="namelist active_fixed"><span id="pubtext">A</span></div>
+    </div>
+    <ul id="ul">
+        <div class="elist" id="A">
+            <div class="namelist"><span>A</span></div>
+            <ul class="listbox">
+                <li>Acetoacetic Ester Condensation</li>
+                <li>Acetoacetic Ester Synthesi</li>
+                <li>Acyloin Condensation</li>
+                <li>Alder-Ene Reaction</li>
+            </ul>
+        </div>
+        <div class="elist" id="B">
+            <div class="namelist"><span>B</span></div>
+            <ul class="listbox">
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Baeyer-Villiger Oxidation</li>
+                <li>Acyloin Condensation</li>
+                <li>Alder-Ene Reaction</li>
+            </ul>
+        </div>
+        <div class="elist" id="C">
+            <div class="namelist"><span>C</span></div>
+            <ul class="listbox">
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+                <li>Ccetoacetic Ester Condensation</li>
+                <li>Ccetoacetic Ester Synthesi</li>
+            </ul>
+        </div>
+        <div class="elist" id="D">
+            <div class="namelist"><span>D</span></div>
+            <ul class="listbox">
+                <li>Dcetoacetic Ester Condensation</li>
+                <li>Dcetoacetic Ester Synthesi</li>
+                <li>Dcyloin Condensation</li>
+                <li>Dlder-Ene Reaction</li>
+                <li>Dcetoacetic Ester Condensation</li>
+                <li>Dcetoacetic Ester Synthesi</li>
+                <li>Dcyloin Condensation</li>
+                <li>Dlder-Ene Reaction</li>
+                <li>Dcetoacetic Ester Condensation</li>
+                <li>Dcetoacetic Ester Synthesi</li>
+                <li>Dcyloin Condensation</li>
+                <li>Dlder-Ene Reaction</li>
+                <li>Dcetoacetic Ester Condensation</li>
+                <li>Dcetoacetic Ester Synthesi</li>
+                <li>Dcyloin Condensation</li>
+                <li>Dlder-Ene Reaction</li>
+            </ul>
+        </div>
+        <div class="elist" id="E">
+            <div class="namelist"><span>E</span></div>
+            <ul class="listbox">
+                <li>Ecetoacetic Ester Condensation</li>
+                <li>Ecetoacetic Ester Synthesi</li>
+                <li>Ecyloin Condensation</li>
+                <li>Elder-Ene Reaction</li>
+                <li>Ecetoacetic Ester Condensation</li>
+                <li>Ecetoacetic Ester Synthesi</li>
+                <li>Ecyloin Condensation</li>
+                <li>Elder-Ene Reaction</li>
+                <li>Ecetoacetic Ester Condensation</li>
+                <li>Ecetoacetic Ester Synthesi</li>
+                <li>Ecyloin Condensation</li>
+                <li>Elder-Ene Reaction</li>
+                <li>Ecetoacetic Ester Condensation</li>
+                <li>Ecetoacetic Ester Synthesi</li>
+                <li>Ecyloin Condensation</li>
+                <li>Elder-Ene Reaction</li>
+            </ul>
+        </div>
+        <div class="elist" id="F">
+            <div class="namelist"><span>F</span></div>
+            <ul class="listbox">
+                <li>Fcetoacetic Ester Condensation</li>
+                <li>Fcetoacetic Ester Synthesi</li>
+                <li>Fcyloin Condensation</li>
+                <li>Flder-Ene Reaction</li>
+                <li>Fcetoacetic Ester Condensation</li>
+                <li>Fcetoacetic Ester Synthesi</li>
+                <li>Fcyloin Condensation</li>
+                <li>Flder-Ene Reaction</li>
+            </ul>
+        </div>
+        <div class="elist" id="Z">
+            <div class="namelist"><span>Z</span></div>
+            <ul class="listbox">
+                <li>Zcetoacetic Ester Condensation</li>
+                <li>Zcetoacetic Ester Synthesi</li>
+                <li>Zcyloin Condensation</li>
+                <li>Zlder-Ene Reaction</li>
+                <li>Zcetoacetic Ester Condensation</li>
+                <li>Zcetoacetic Ester Synthesi</li>
+                <li>Zcyloin Condensation</li>
+                <li>Zlder-Ene Reaction</li>
+            </ul>
+        </div>
+    </ul>
+    <ul class="right_nav">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBM0Q3NEU2RjY0OTYxMUU4OEQ4RDlDQ0M2QURDNjJFQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBM0Q3NEU3MDY0OTYxMUU4OEQ4RDlDQ0M2QURDNjJFQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkEzRDc0RTZENjQ5NjExRTg4RDhEOUNDQzZBREM2MkVBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkEzRDc0RTZFNjQ5NjExRTg4RDhEOUNDQzZBREM2MkVBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bSkedAAAAtlJREFUeNqUVE9I2nEUf5rZH6k0ZAv8E4yKTNACAy9FEdNDdNjoEnWQTkWWEdRhh+g82Ai2FQUSjf4M9DDsoq2JLCghasvljpJE6IpYh6Ca5dt73/CHVJc9ePj1+77v8z7v30+GiHBftre3jX6/P5lIJOD6+hoKCgpArVZDe3v7i/7+/s8PHBgkXycmJl41NjZGNRoNo0taUlKC1dXVv7u7uz+FQiFLvo902N/fV/f19X0oLy//o1QqsaioCCsrK9HhcKDVakWFQiGACgsLsbm5eS8QCNgfgAwMDLxWqVTIyo8JDMfHx/Hg4AB9Ph+azWaktLCiogI5SGtr67doNGqQQJaWlp7X1NT8YmfW0tJSHBsbw3Q6jSyZTAZXV1fRZDIJIA7Awdxu9xsJxOVyveMIxcXFwjg6OoqpVArzhYFWVlawvr4e5XK5YGOz2fY2NzefQTweVxG1IOfKEYaHhyUG9+Xm5gaJNTY0NAggKjTOzMwghMNhqXBDQ0N4enoqHM7OzvD4+FicT05OJODb21tcWFhAvV6P1HacnJxEOdGE3KxotVqhl5eXQBFgY2ND3CeTSZifn4ednR0gBkBdA2IO2WxW2BV08YQK6aWLrsXFRXF5dXUFy8vL4PF47h4pFLC+vg6UP3R2dsLa2hocHR2BTqeDqqqqu8LSAL3PtTc3XHyenZ0VKcRiMezo6JBs3AAuLJXhazAYNMs5UktLS4Ty+8mAPN5lZWVAj0AmkwkmPPaszIjtbOP/Fotlz+l0xgXIyMiIv62t7Qs7UQeEI+fLtWHh/WHleuTSra2tDff09HwUQaampoTBaDR+p4V7enh4aGUAZsXR+DcSifBSwsXFBXAjqBa71Mnp3t7eyIMF3Nra0hP6tMFg+MFTm7+APEfUObTb7QGv1+vM95M99imYm5vrogV7eX5+rqEUsvRGTvXINDU17Q4ODr6tq6v7m//+UZD/lX8CDAAl0+WbVtcqvAAAAABJRU5ErkJggg=="/>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li> 
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+        <li>G</li>
+        <li>H</li>
+        <li>I</li>
+        <li>J</li>
+        <li>K</li>
+        <li>L</li>
+        <li>M</li>
+        <li>N</li>
+        <li>O</li>
+        <li>P</li>
+        <li>Q</li>
+        <li>R</li>
+        <li>S</li>
+        <li>T</li>
+        <li>U</li>
+        <li>V</li>
+        <li>W</li>
+        <li>X</li>
+        <li>Y</li>
+        <li>Z</li>
+    </ul>
+</div>
+<script type="text/javascript">
+//适配  
+(function (doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if(clientWidth>=1024){// 兼容的设备宽度最大尺寸
+                //iphone6   1rem  = 20px;
+                docEl.style.fontSize = '54.61px';
+                // console.log("1rem===="+docEl.style.fontSize);
+            }else{
+                docEl.style.fontSize = 54.61* (clientWidth / 1024) + 'px';
+                //console.log("1rem====="+docEl.style.fontSize);
+            }    
+        };  
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+//滚动字母悬浮
+window.addEventListener('scroll',function(){
+    var sct = document.documentElement.scrollTop || window.pageYOfset ||document.body.scrollTop;
+    var scp = document.querySelector('.right_nav').firstChild.nextElementSibling;
+    var scrtop = document.querySelector('#A').lastElementChild.offsetTop;
+    var imalist = document.querySelectorAll('.elist');
+    if(scrtop-sct<=14){//余量自己调
+        document.querySelector('.publictop').style.display = "block";
+
+    }else{
+        document.querySelector('.publictop').style.display = "none";
+    }  
+    for(var i=0;i<imalist.length;i++){
+        if(sct-imalist[i].offsetTop>=0){
+            document.querySelector('#pubtext').innerHTML=Elist[i].firstChild.innerHTML;
+        }
+    }
+});
+//定位
+var liList = document.querySelector('.right_nav').children;
+var Elist = document.querySelectorAll('.namelist');
+for(var i=0;i<liList.length;i++){
+    liList[i].index = i;
+    liList[i].onclick=function(){
+        if(this.index==0){//回顶部
+            document.querySelector('html').scrollIntoView();
+        }  
+        var _text = this.innerHTML;//点击右侧的字母
+        document.getElementById(_text) && document.getElementById(_text).scrollIntoView();
+        
+    }
+}
+</script>
+</body>
+</html>
