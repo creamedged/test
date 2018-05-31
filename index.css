@@ -24,18 +24,18 @@
 .list .item .content a{border:1px solid #fff;text-decoration: none; width:68px; outline: none; padding:3px 15px; display: block; font-size:12px; text-align:center; margin:10px auto 0; color:#fff;}
 
 
-.contact{background:#0f88e5; color:#fff; padding:34px 18px 27px;}
+.contact{width:90%;color:#fff; padding:34px 5% 27px; position:absolute; bottom:0;}
 .contact h1{font-size:14px; font-weight: normal; margin-bottom:16px;}
 .contact .item{font-size:12px; margin-bottom:11px; overflow: hidden;}  
 .contact .item .title{display:block; float:left;font-size:12px;}
 .contact .item .content{  margin-left:60px}
 
 
-.ewm{margin-top:26px; }
+.ewm{margin:13px 0; }
 
-.ewm img{display:block;width:172px; height: 158px;}
+.ewm img{display:block;width:100px; height: 100px;}
 .ewm p{font-size:12px; margin-top:15px;}
-
-.footer{background: #1c1e28; padding:37px 0 43px 18px}
+.last {width:100%; background: url('./img/last.jpg') no-repeat; background-size:100% 100%; position:relative;}
+.footer{padding: 13px 0 0;border-top: 1px solid #393939;}
 .footer img{width:75px; height:30px; margin-bottom:15px;}
 .footer p{color:#fff; font-size:12px; margin-bottom:9px;}
