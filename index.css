@@ -15,7 +15,7 @@
 .navList ul li {list-style: none; text-align: center;  border-bottom:1px solid #666e74; padding:15px 0 17px;}
 .navList ul li a{color:#fff; text-decoration: none; font-size:13px;}
 .slide {overflow:hidden; }
-.list{background:#0f88e5; margin-bottom:20px;}
+.list{background:#0f88e5;}
 .list .item {position:relative;}
 .list .item img{display: block; width:100%;}
 .list .item .content{height:90px; padding-top:30px;overflow: hidden; position:absolute; bottom:0; left:0px; right:0px; background:#0f88e5}
